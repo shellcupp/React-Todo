@@ -1,0 +1,10 @@
+*{
+   background-color:beige;
+
+}
+
+button, input {
+    background-color: pink;
+    margin: 2%;
+    padding: .5%;
+}
