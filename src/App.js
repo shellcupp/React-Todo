@@ -4,9 +4,8 @@ import TodoList from './components/TodoComponents/TodoList'
 import styled from 'styled-components';
 
 class App extends React.Component {
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
+  // call super(props) before any other statement. Otherwise, this.props will be undefined in the constructor
+  //Initializing local state by assigning an object to this.state
   constructor(){
     super();
     this.state = {
@@ -25,6 +24,7 @@ class App extends React.Component {
       todo: ''
     };
   }
+ //set new todo to add new todo to todolist
   addTodo = e => {
     e.preventDefault();
     const newTodo = { task: this.state.todo, completed: false, id: Date.now() };
@@ -33,9 +33,8 @@ class App extends React.Component {
       todo: '' 
     });
   };
-
+//mapiing threw the todos so that onclick changes them to line-through (completed)
   changeTodo = e => this.setState({ [e.target.name]: e.target.value });
-
   toggleTodoComplete = id => {
     let todos = this.state.todos.slice();
     todos = todos.map(todo => {
@@ -48,7 +47,7 @@ class App extends React.Component {
     });
     this.setState({ todos });
   };
-
+//To clear completed I use filter to find all todos that are complted and set their state back to todo so that is will slice it 
   clearCompletedTodos = e => {
     e.preventDefault();
     let todos = this.state.todos.filter(todo => !todo.completed);

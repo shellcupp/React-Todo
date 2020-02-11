@@ -1,5 +1,5 @@
 import React from 'react';
-
+//in this component I changed the style of the todo after a click so completed can be crossed off
 const Todo = props => {
   return (
     <div

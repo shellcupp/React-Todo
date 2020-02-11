@@ -1,4 +1,6 @@
 import React from 'react';
+//this component is the form for addeding a new task
+//added clear completed button
 const TodoForm = props => {
   return (
     <form>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Todo from './Todo';
-
+//created this functional component to take props from App and populate a todo list from the todos array
 const TodoList = props => {
   return (
     <div>
